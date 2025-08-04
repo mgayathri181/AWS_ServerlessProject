@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Commerce Order App</title>
+  <style>
+    body {
+      background: #f5f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #0d6efd;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: 600;
+    }
+
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn {
+      margin-top: 1.5rem;
+      padding: 0.75rem;
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #084298;
+    }
+
+    #message {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: green;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+
+    th, td {
+      padding: 0.75rem;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    🛒 E-Commerce Order Processing App
+  </header>
+
+  <div class="container">
+    <h2>Create Order</h2>
+    <label for="orderId">Order ID</label>
+    <input type="text" id="orderId" placeholder="Enter Order ID" />
+
+    <label for="customerName">Customer Name</label>
+    <input type="text" id="customerName" placeholder="Enter Customer Name" />
+
+    <label for="product">Product</label>
+    <input type="text" id="product" placeholder="Enter Product" />
+
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" placeholder="Enter Quantity" />
+
+    <label for="price">Price</label>
+    <input type="number" id="price" placeholder="Enter Price" />
+
+    <button class="btn" id="submitOrder">Submit Order</button>
+    <p id="message"></p>
+
+    <h2>All Orders</h2>
+    <button class="btn" id="fetchOrders">View Orders</button>
+
+    <table id="ordersTable" style="display:none;">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="scripts.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+</body>
+</html>
